@@ -1,0 +1,4 @@
+"CriterionID","CategoryID","CategoryName","CategoryWeight","specificationPageString","criterionName","description","evidenceScreenshotDescription","Knockout","Punkte für die Berechnung der Scores","Punkte für die Berechnung der Scores",,,,
+1.0,1,Brand,0.5,"landingPage,otherPage",Header,desc,evDesc,false,b,1.0
+1.0,1,Brand,0.5,"landingPage,otherPage",Google Rank,desc,evDesc,false,gr,1.1,2.2,3.3,4.4,5.5
+1.0,2,Law,0.5,"landingPage,otherPage",Product Acqusistion,desc,evDesc,true,pa,1.1,2.2,3.3,4.4

@@ -1,0 +1,17 @@
+.speedcontrol-actions-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .left-wrapper, .right-wrapper {
+        flex: 0 1 auto;
+
+        // > * {
+        //     margin: 5px 8px;
+        // }
+    }
+
+    .right-wrapper {
+        text-align: right;
+    }
+}

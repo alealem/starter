@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2016",
+        "jsx": "preserve",
+        "baseUrl": "./",
+        "paths": {
+            "@root/*": [
+                "./src/app/*"
+            ]
+        }
+    },
+    "exclude": [
+        "build-tasks",
+        "dev-tools",
+        "flow-coverage",
+        "flow-typed",
+        "node_modules",
+        "target",
+        "dist"
+    ]
+}

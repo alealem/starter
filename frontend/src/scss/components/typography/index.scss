@@ -1,0 +1,36 @@
+@import 'react-tippy/dist/tippy.css';
+
+.speedcontrol-typography {
+
+    &-heading {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        color: $dark-gray;
+        text-shadow: 1px 1px $light-gray;
+        margin: 0;
+
+        &.small {
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+        }
+    }
+
+    &-inline-separator {
+        font-weight: 300;
+        font-size: 1.1rem;
+        color: #bbb;
+        margin: 0 15px;
+    }
+
+    &-page-link {
+        color: $primary-color;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+}

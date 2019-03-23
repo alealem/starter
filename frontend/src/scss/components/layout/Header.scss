@@ -1,0 +1,67 @@
+.speedcontrol-header {
+    display: flex;
+    flex: 0 0 45px;
+    height: 45px;
+    background-color: $white;
+    box-shadow: 0 1px 5px 0 $medium-gray;
+    border-bottom: 2px solid $nav-bg-color;
+    padding: 0 10px;
+    z-index: 500;
+    overflow: hidden;
+
+    &-left, &-right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: $dark-gray;
+
+        > i {
+            text-align: center;
+            font-size: 1.5rem;
+            width: 45px;
+            transition: color 250ms ease, background-color 250ms ease;
+
+            &:hover {
+                cursor: pointer;
+                color: $primary-color;
+                background-color: $very-light-gray;
+            }
+        }
+    }
+
+    &-left {
+        @include speedcontrol-sidebar-toggler;
+    }
+
+    &-right {
+        flex: 1 1 0;
+        justify-content: flex-end;
+    }
+
+    &-link {
+        display: inline-block;
+        padding: 0 10px;
+        font-weight: bold;
+        vertical-align: top;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0 1px 1px $light-gray;
+        transition: color 250ms ease, background-color 250ms ease;
+
+        &:not(.has-button):hover {
+            cursor: pointer;
+            color: $primary-color;
+            background-color: $very-light-gray;
+        }
+
+        > i {
+            font-size: 1.5rem;
+            line-height: 45px;
+            vertical-align: top;
+
+            & + span {
+                padding-left: 10px;
+            }
+        }
+    }
+}

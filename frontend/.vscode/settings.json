@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.run": "onSave",
+    "javascript.validate.enable": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "flow.useNPMPackagedFlow": true,
+    "typescript.quickSuggestionsForPaths": false,
+    "path-intellisense.mappings": {
+        "@root": "${workspaceRoot}/src/app"
+    }
+}

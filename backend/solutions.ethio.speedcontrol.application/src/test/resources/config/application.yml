@@ -1,0 +1,87 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration is used for unit/integration tests.
+# ===================================================================
+
+
+spring:
+    application:
+        name: SpeedControlApp
+    cache:
+        type: simple
+    flyway:
+        enabled: false
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:mem:SpeedControlApp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        name:
+        username: sa
+        password:
+        hikari:
+            auto-commit: false
+    jpa:
+        database-platform: solutions.ethio.speedcontrol.application.domain.util.FixedH2Dialect
+        database: H2
+        open-in-view: false
+        show-sql: false
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.hbm2ddl.auto: update
+            hibernate.jdbc.time_zone: UTC
+    liquibase:
+        contexts: test
+    mail:
+        host: localhost
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: HTML
+
+
+server:
+    port: 10344
+    address: localhost
+
+# ===================================================================
+# FMS specific properties
+# ===================================================================
+
+application:
+    async:
+        core-pool-size: 1
+        max-pool-size: 50
+        queue-capacity: 10000
+    # To test logstash appender
+    logging:
+        logstash:
+            enabled: true
+            host: localhost
+            port: 5000
+            queue-size: 512
+    mail:
+        from: test@localhost
+        base-url: http://127.0.0.1:8080
+    security:
+        authentication:
+            jwt:
+                # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
+                base64-secret: MzViM2VmYjJkNDdlMDM1OTdiZTY1ZTVkNWEwOTliN2M1OTdlZWY5ZTcwY2RkMWMzYWI1ODRiNjFiMGI0NmMyZTE3ODJmOTFmZjkwOTkwNWY0NDc2OTVkNzQ5NzRmYjYyNmJiNmNlYWNiZTU2ZTg1MThjOTA4MWVhZGI3YmMwYjY=
+                # Token is valid 24 hours
+                token-validity-in-seconds: 86400
+    metrics:
+        logs: # Reports metrics in the logs
+            enabled: true
+            report-frequency: 60 # in seconds

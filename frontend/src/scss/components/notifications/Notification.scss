@@ -1,0 +1,65 @@
+$speedcontrol-notifications-box-shadow-color: $dark-gray !default;
+
+$speedcontrol-notifications-default-background: #5a5a5a !default;
+$speedcontrol-notifications-default-color: #eee !default;
+
+$speedcontrol-notifications-success-background: $success-color !default;
+$speedcontrol-notifications-success-color: $body-font-color !default;
+
+$speedcontrol-notifications-warning-background: $warning-color !default;
+$speedcontrol-notifications-warning-color: lighten($body-font-color, 25%) !default;
+
+$speedcontrol-notifications-alert-background: $alert-color !default;
+$speedcontrol-notifications-alert-color: $white !default;
+
+.speedcontrol-notifications {
+    position: fixed;
+    z-index: 1000;
+
+    &.top-right {
+        margin-top: 15px;
+        right: 15px;
+    }
+
+    &.bottom-center {
+        bottom: 15px;
+        left: 0;
+        right: 0;
+    }
+
+    .notifications-container {
+        margin: 0 auto;
+        min-width: 280px;
+        max-width: 560px;
+    }
+
+    .notification {
+        padding: 10px 15px;
+        background: $speedcontrol-notifications-default-background;
+        color: $speedcontrol-notifications-default-color;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 500;
+        box-shadow: 0 0 8px 1px $speedcontrol-notifications-box-shadow-color;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        &.success {
+            background: $speedcontrol-notifications-success-background;
+            color: $speedcontrol-notifications-success-color;
+        }
+
+        &.warning {
+            background: $speedcontrol-notifications-warning-background;
+            color: $speedcontrol-notifications-warning-color;
+        }
+
+        &.alert {
+            background: $speedcontrol-notifications-alert-background;
+            color: $speedcontrol-notifications-alert-color;
+        }
+    }
+}

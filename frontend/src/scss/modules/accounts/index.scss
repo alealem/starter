@@ -1,0 +1,26 @@
+.speedcontrol-accounts {
+    &-login {
+        min-height: 100vh;
+        background: transparentize($primary-color, 0.75);
+        .auth-message {
+            margin-bottom: 10px;
+        }
+        .auth-form {
+            padding-top: 100px;
+            margin: 0 auto;
+            max-width: 350px;
+            .speedcontrol-card {
+                position: relative;
+                background: #fff;
+                border: none;
+                border-radius: 5px;
+                -webkit-box-shadow: 0 1px 3px 0 #919ba4;
+                box-shadow: 0 1px 3px 0 #919ba4;
+                overflow: hidden;
+            }
+            .speedcontrol-card-body {
+                padding: 1.25rem;
+            }
+        }
+    }
+}

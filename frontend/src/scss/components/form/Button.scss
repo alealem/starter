@@ -1,0 +1,130 @@
+@mixin speedcontrol-button {
+  display: inline-flex;
+  position: relative;
+  padding: 8px 8px;
+  margin-top: 0;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-shadow: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: all 250ms ease;
+  font-family: 'Roboto', sans-serif;
+
+  &.disabled, &:disabled {
+    box-shadow: none;
+    color: $medium-gray !important;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  > i {
+    width: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.1rem;
+    line-height: 0.9rem;
+
+    &:only-child {
+      width: 16px;
+      margin-left: -2px;
+      line-height: 14px;
+      font-size: 1.4rem;
+    }
+
+    & + span {
+        padding-left: 8px;
+    }
+  }
+
+  > span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+.speedcontrol-flat-button {
+  @include speedcontrol-button;
+  background-color: transparent;
+
+  &.primary {
+    color: $primary-color;
+  }
+
+  &.secondary {
+    color: $secondary-color;
+  }
+
+  &.alert {
+    color: $alert-color;
+  }
+
+  &.default {
+    color: $black;
+  }
+
+  &:hover:not(.disabled), &:hover:not(:disabled) {
+    background-color: $light-gray;
+  }
+
+  &.disabled, &:disabled {
+    background-color: transparent !important;
+  }
+}
+
+.speedcontrol-raised-button {
+  @include speedcontrol-button;
+  box-shadow: 0 1px 5px lighten($black, 50%);
+
+  &.primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover {
+      background-color: transparentize($primary-color, 0.25);
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary-color;
+    color: $white;
+
+    &:hover {
+      background-color: transparentize($secondary-color, 0.25);
+    }
+  }
+
+  &.alert {
+    background-color: $alert-color;
+    color: $white;
+
+    &:hover {
+      background-color: transparentize($alert-color, 0.25);
+    }
+  }
+
+  &.default {
+    background-color: $white;
+    color: $black;
+
+    &:hover {
+      background-color: lighten($medium-gray, 20%);
+    }
+  }
+
+  &.disabled, &:disabled {
+    background-color: transparentize($medium-gray, 0.7) !important;
+  }
+}

@@ -1,0 +1,21 @@
+.speedcontrol-panel {
+    padding: 10px 20px;
+    position: relative;
+    border: 1px solid $dark-gray;
+    border-radius: 5px;
+    font-weight: 500;
+
+    &-warning {
+        @extend .speedcontrol-panel;
+        border-color: $warning-color;
+        background-color: transparentize($warning-color, 0.15);
+        color: $body-font-color;
+    }
+
+    &-alert {
+        @extend .speedcontrol-panel;
+        border-color: $alert-color;
+        background-color: transparentize($alert-color, 0.10);
+        color: $white;
+    }
+}

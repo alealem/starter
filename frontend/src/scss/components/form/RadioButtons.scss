@@ -1,0 +1,88 @@
+.speedcontrol-radio-buttons {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    > legend {
+        @extend .speedcontrol-input-label;
+    }
+
+    .radio-button {
+        display: block;
+        margin-right: 18px;
+        margin-bottom: 5px;
+        transition: background-color 250ms ease;
+
+        &.inlined {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: $light-gray;
+            box-shadow: 0 0 3px 0 $medium-gray;
+
+            &:not(.disabled):hover {
+                cursor: pointer;
+                background-color: darken($light-gray, 5%);
+            }
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+            background-color: lighten($light-gray, 5%);
+
+            .radio-button-on {
+                background-color: $medium-gray;
+            }
+
+            .radio-button-off {
+                border-color: $medium-gray;
+            }
+        }
+
+        &-input {
+            display: none;
+        }
+
+        &-circle {
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            width: 18px;
+            height: 18px;
+
+            &.checked > .radio-button-on {
+                transform: scale(0.55);
+            }
+
+            > .radio-button-on, > .radio-button-off {
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+            }
+
+            > .radio-button-off {
+                border: 2px solid $primary-color;
+            }
+
+            > .radio-button-on {
+                background-color: $primary-color;
+                transform: scale(0);
+                transition: transform 250ms ease;
+            }
+        }
+
+        &-label {
+            display: inline-block;
+            vertical-align: middle;
+            font-weight: normal;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            padding-left: 5px;
+            user-select: none;
+        }
+    }
+}

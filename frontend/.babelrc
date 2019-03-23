@@ -1,0 +1,19 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "targets": "> 0.25%, not dead"
+            }
+        ],
+        "@babel/flow",
+        "@babel/react"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-export-namespace-from"
+    ],
+    "only": [
+        "src/app"
+    ]
+}

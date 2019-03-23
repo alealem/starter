@@ -1,0 +1,78 @@
+.speedcontrol-checkbox {
+    cursor: pointer;
+
+    > input {
+        display: none;
+    }
+
+    .checkbox {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin: 0;
+
+        &.checked > .checkbox-icon {
+            color: $white;
+            background-color: $primary-color;
+            border-color: transparent;
+
+            &::after {
+                box-sizing: border-box;
+                transform: rotate(45deg);
+                position: absolute;
+                left: 4.66667px;
+                top: .22222px;
+                display: table;
+                width: 6.66667px;
+                height: 13.33333px;
+                border-width: 2px;
+                border-style: solid;
+                border-top: 0;
+                border-left: 0;
+                content: '';
+            }
+        }
+
+        &.indeterminate > .checkbox-icon {
+            &::after {
+                box-sizing: border-box;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: table;
+                width: 12px;
+                height: 2px;
+                border-width: 2px;
+                border-style: solid;
+                border-top: 0;
+                border-left: 0;
+                content: '';
+            }
+        }
+
+        > .checkbox-icon {
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 2px solid $body-font-color;
+            border-radius: 2px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .checkbox-label {
+        display: inline;
+        vertical-align: middle;
+        font-weight: normal;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding-left: 5px;
+        user-select: none;
+    }
+}

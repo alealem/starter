@@ -1,0 +1,32 @@
+.speedcontrol-tabs {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .tab-labels {
+        display: flex;
+        flex-flow: row nowrap;
+        border-bottom: 1px solid $light-gray;
+
+        .tab-label {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 6px 20px 2px;
+            border-bottom: 2px solid transparent;
+            transition: background-color 250ms ease, border-color 250ms ease;
+            cursor: pointer;
+
+            &:hover {
+                background: $light-gray;
+            }
+
+            &.selected {
+                border-bottom: 2px solid $primary-color;
+            }
+        }
+    }
+
+    .tab-content {
+        padding: 10px 20px;
+    }
+}

@@ -1,0 +1,61 @@
+@import 'react-table/react-table.css';
+
+.speedcontrol-table {
+    background-color: $white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 0 $medium-gray;
+
+    .cells.number-cell {
+        text-align: right;
+    }
+
+    .rt-thead {
+        background-color: transparentize($primary-color, 0.85);
+
+        &.-header {
+            box-shadow: none;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .rt-th {
+            padding: 8px 5px;
+            font-weight: 500;
+            color: $dark-gray;
+        }
+    }
+
+    .rt-tbody {
+        .rt-tr {
+            transition: background-color 250ms ease;
+
+            &.clickable:not(.-padRow) {
+                cursor: pointer;
+
+                &:hover {
+                    background: transparentize($primary-color, 0.75);
+                }
+            }
+
+            &.selected-row:not(.-padRow) {
+                background: transparentize($success-color, 0.5);
+
+                &:hover {
+                    background: transparentize($success-color, 0.4) !important;
+                }
+            }
+        }
+    }
+
+    .-pagination {
+        box-shadow: none;
+        border-top: 1px dashed $light-gray;
+
+        .-btn {
+            @extend .speedcontrol-flat-button;
+            transition: background 250ms ease, color 250ms ease;
+            background: rgba(0,0,0,0.05);
+        }
+    }
+}

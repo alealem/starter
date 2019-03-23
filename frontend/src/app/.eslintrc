@@ -1,0 +1,35 @@
+{
+    "plugins": [
+        "react",
+        "flowtype"
+    ],
+    "rules": {
+        "react/display-name": 0,
+        "react/prop-types": 0,
+        "no-console": 1
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "settings": {
+        "react": {
+            "version": "16.6",
+            "flowVersion": "0.86"
+        }
+    },
+    "extends": [
+        "../../.eslintrc",
+        "plugin:react/recommended",
+        "plugin:flowtype/recommended",
+        "prettier",
+        "prettier/flowtype",
+        "prettier/react",
+        "prettier/standard"
+    ],
+    "globals": {}
+}

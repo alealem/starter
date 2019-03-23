@@ -1,0 +1,44 @@
+services:
+- docker:dind
+
+variables:
+  IMAGE: "eu.gcr.io/innoplexia-ivi/fms"
+  INSTANCE_PROJECT: "innoplexia-ivi"
+  INSTANCE_ZONE: "europe-west1-b"
+  INSTANCE_NAME: "productive-fms-0"
+  DOCKER_HOST: "tcp://localhost:2375"
+  DOCKER_DRIVER: "overlay"
+
+before_script:
+- export SHORT_COMMIT_SHA=$(cut -c 1-8 <<< $CI_COMMIT_SHA)
+
+stages:
+- build
+- deploy
+
+build:
+  stage: build
+  image: eu.gcr.io/innoplexia-ivi/builders-openjdk-8
+  script:
+  - cd backend
+  - mvn -B package
+  - cd solutions.ethio.speedcontrol.application
+  - docker build -t $IMAGE:$SHORT_COMMIT_SHA .
+  - gcloud docker -- push $IMAGE:$SHORT_COMMIT_SHA
+
+deploy:
+  stage: deploy
+  image: eu.gcr.io/innoplexia-ivi/builders-gcloud
+  script:
+  - gcloud --quiet beta compute instances update-container $INSTANCE_NAME --container-image=$IMAGE:$SHORT_COMMIT_SHA --project=$INSTANCE_PROJECT --zone=$INSTANCE_ZONE
+  only:
+  - master
+
+deploy-client:
+  stage: deploy
+  image: eu.gcr.io/innoplexia-ivi/builders-openjdk-8
+  script:
+    - mvn deploy -DskipTests
+  only:
+  - master
+  

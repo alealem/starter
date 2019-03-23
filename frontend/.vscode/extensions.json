@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"flowtype.flow-for-vscode",
+		"samverschueren.final-newline",
+		"christian-kohler.path-intellisense",
+		"PeterJausovec.vscode-docker"
+	]
+}

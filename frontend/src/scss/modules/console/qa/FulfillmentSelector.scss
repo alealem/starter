@@ -1,0 +1,42 @@
+.speedcontrol-fulfillment-selector {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .fulfillment {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        cursor: pointer;
+
+        &.completely-fulfilled {
+            color: #005b00;
+        }
+
+        &.partially-fulfilled {
+            color: #e39300;
+        }
+
+        &.not-fulfilled {
+            color: #b70000;
+        }
+
+        &:hover {
+            > span {
+                text-decoration: underline;
+            }
+        }
+
+        > input {
+            cursor: pointer;
+        }
+
+        > input:checked + span {
+            font-weight: bold;
+        }
+
+        > span {
+            margin-left: 4px;
+            user-select: none;
+        }
+    }
+}

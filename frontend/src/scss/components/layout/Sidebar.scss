@@ -1,0 +1,76 @@
+.speedcontrol-sidebar {
+    height: 100%;
+    overflow-y: auto;
+    width: $speedcontrol-sidebar-width;
+    color: $white;
+    background-color: $nav-bg-color;
+    z-index: 450;
+    transition: width 250ms ease-in;
+
+    @include breakpoint(medium down) {
+        width: 0;
+
+        &.is-open {
+            width: $speedcontrol-sidebar-width;
+        }
+    }
+
+    &-header {
+        font-size: 1.6rem;
+        font-weight: bold;
+        letter-spacing: 5px;
+        height: 45px;
+        line-height: 45px;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    &-group-header {
+        font-size: 0.7rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $light-gray;
+        padding: 10px 20px 5px;
+    }
+
+    .navigation-item {
+        display: block;
+        position: relative;
+        font-size: 1.1rem;
+        color: $white;
+        padding: 10px 20px;
+        margin-bottom: 2px;
+        user-select: none;
+        transition: background-color 250ms ease;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover, &.active {
+            background-color: $nav-bg-dark-color;
+        }
+
+        &.active::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            background-color: $nav-bg-color;
+        }
+
+        &-icon {
+            display: inline-block;
+            width: 25px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        &-title {
+            display: inline-block;
+            font-weight: 500;
+            line-height: 25px;
+            margin-left: 5px;
+        }
+    }
+}

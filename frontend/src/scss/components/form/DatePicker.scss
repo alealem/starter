@@ -1,0 +1,17 @@
+@import 'react-datepicker/src/stylesheets/datepicker';
+
+.speedcontrol-date-picker {
+    @extend .speedcontrol-input;
+
+    &-label {
+        @extend .speedcontrol-input-label;
+    }
+
+    &-field {
+        @extend .speedcontrol-input-field;
+    }
+
+    .react-datepicker__input-container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,19 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.iml
+*.mwb.bak
+.project
+.settings
+target
+gwt-unitCache
+widgetsets
+logs
+bin
+!solutions.ethio.speedcontrol.web/bin/
+.classpath
+.springBeans
+.idea

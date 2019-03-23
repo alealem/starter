@@ -1,0 +1,70 @@
+.speedcontrol-input {
+    position: relative;
+
+    &-is-required::after {
+        content: '*';
+        vertical-align: middle;
+        padding-left: 4px;
+        color: $warning-color;
+    }
+
+    &-invalid-wrapper {
+        max-width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &-invalid-icon {
+        font-size: 0.9rem;
+        color: $alert-color;
+        cursor: help;
+        padding-left: 4px;
+    }
+
+    &-invalid-message {
+        padding-left: 4px;
+        font-size: 0.9rem;
+        color: darken($alert-color, 10%);
+    }
+
+    &-label {
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 500;
+        color: $dark-gray;
+        margin-bottom: 3px;
+        width: 100%;
+    }
+
+    &-field {
+        display: inline-block;
+        font-weight: 300;
+        width: 100%;
+        padding: 5px 10px;
+        border: 1px solid $light-gray;
+        border-bottom-width: 2px;
+        border-radius: 2px;
+        transition: border-color 300ms;
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $secondary-color;
+        }
+
+        &:disabled {
+            background-color: $light-gray;
+            cursor: not-allowed;
+        }
+
+        &.numeric {
+            text-align: right;
+        }
+    }
+
+    &.is-invalid .speedcontrol-input-field {
+        border-bottom-color: $warning-color;
+    }
+}

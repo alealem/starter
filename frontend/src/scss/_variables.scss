@@ -1,0 +1,36 @@
+@import 'foundation-sites/scss/settings/settings';
+
+$global-font-size: 100%;
+$global-width: rem-calc(1200);
+$global-lineheight: 1.5;
+$foundation-palette: (
+  primary: #006bad,
+  secondary: #00a0ff,
+  success: #00d0a1,
+  warning: #f79600,
+  alert: #ff3c53
+);
+$secondary-hover-color: #00add0;
+$nav-bg-color: #0088bd;
+$nav-bg-dark-color: #005c8f;
+$very-light-gray: #f6f8fa;
+$light-gray: #e2e2e2;
+$medium-gray: #919ba4;
+$dark-gray: #3d464d;
+$cyan: #13d7d9;
+$black: #0a0a0a;
+$white: #fff;
+$body-background: $very-light-gray;
+$body-font-color: $black;
+$body-font-family: 'Roboto', Helvetica, Roboto, Arial, sans-serif;
+$body-antialiased: true;
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: 0;
+$global-text-direction: ltr;
+$global-flexbox: false;
+$print-transparent-backgrounds: true;
+
+@include add-foundation-colors;

@@ -1,0 +1,86 @@
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.speedcontrol-modal-portal {
+  position: relative;
+  z-index: 10000;
+
+  > div {
+    opacity: 0;
+  }
+
+  > .speedcontrol-modal-overlay {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+    &-after-open {
+      opacity: 1;
+    }
+
+    &-before-close {
+      opacity: 0;
+    }
+  }
+}
+
+.speedcontrol-modal {
+  position: relative;
+  transform: scale(0.25);
+  margin: auto auto;
+  flex: 1;
+  align-self: baseline;
+  max-width: 800px;
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 3px lighten($dark-gray, 10%);
+  transition: transform 400ms ease-out;
+  outline: none;
+
+  &-after-open {
+    transform: scale(1);
+  }
+
+  &-before-close {
+    transform: scale(0.25);
+  }
+
+  &-header {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    font-weight: 500;
+    border-bottom: 1px solid lighten($light-gray, 5%);
+  }
+
+  &-actions {
+    border-top: 1px solid lighten($light-gray, 5%);
+    padding: 8px;
+    text-align: right;
+
+    > * {
+      margin-left: 10px;
+    }
+  }
+
+  &-body {
+    padding: 15px 15px;
+
+    &.with-scroll {
+      max-height: 500px;
+      overflow: auto;
+    }
+  }
+}
